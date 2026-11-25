@@ -62,7 +62,7 @@ Die Kommune kann diese Unterlagen anfragen, statt alles selbst zu prüfen. Liegt
 
 ## Schritt für Schritt mit der Excel
 
-Das Werkzeug: [`werkzeug/bia_zeitkritikalitaet.xlsx`](werkzeug/bia_zeitkritikalitaet.xlsx). Es hat ein Blatt je Schritt. Die Startseite erklärt den Ablauf und verlinkt die Blätter. **Gelbe Felder** sind Eingaben, **graue Felder** werden berechnet. Die Datei läuft ab Excel 2010 und braucht keine Makros.
+Das Werkzeug: [`werkzeug/bia_zeitkritikalitaet.xlsx`](werkzeug/bia_zeitkritikalitaet.xlsx) ist die leere Vorlage mit vorbereiteter Liste der Sektoren und Branchen. Ein ausgefülltes Beispiel liegt unter [`beispiel/beispiel_energie_wasser.xlsx`](beispiel/beispiel_energie_wasser.xlsx). Die Excel hat ein Blatt je Schritt. Die Startseite erklärt den Ablauf und verlinkt die Blätter. **Gelbe Felder** sind Eingaben, **graue Felder** werden berechnet. Die Datei läuft ab Excel 2010 und braucht keine Makros.
 
 ### Schritt 1: Schutzgüter festlegen · Blatt *1 Schutzgüter*
 
@@ -123,7 +123,7 @@ Das Blatt vergleicht das mit der Vorgabe und zeigt **erfüllt: ja/nein**. Wo „
 
 ## Beispiel: Energie und Wasser
 
-Diese Bewertungen sind in der Excel bereits eingetragen:
+Die Datei [`beispiel/beispiel_energie_wasser.xlsx`](beispiel/beispiel_energie_wasser.xlsx) enthält diese Bewertungen:
 
 | Rang | Branche bzw. Dienstleistung | MTPD | Begründung (gekürzt) |
 |---|---|---|---|
