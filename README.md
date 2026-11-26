@@ -1,6 +1,6 @@
 # Zeitkritikalität kommunaler KRITIS
 
-**Eine Business Impact Analyse nach BSI-Standard 200-4, umgebaut für den Bevölkerungsschutz.**
+**Eine Business Impact Analyse nach BSI-Standard 200-4, angepasst für den Bevölkerungsschutz.**
 
 Wenn in einer Kommune Strom, Wasser oder Kommunikation ausfallen: Welche Dienstleistung braucht zuerst Aufmerksamkeit? Das Verfahren fragt nicht nach Eintrittswahrscheinlichkeiten, sondern danach, wie lange ein Ausfall tragbar ist, bevor der Schaden für die Bevölkerung untragbar wird. Das Ergebnis ist eine maximal tolerierbare Ausfallzeit (MTPD) je Dienstleistung und daraus eine Reihenfolge.
 
@@ -8,7 +8,7 @@ Wenn in einer Kommune Strom, Wasser oder Kommunikation ausfallen: Welche Dienstl
 
 ## Die Idee
 
-Die Business Impact Analyse (BIA) aus dem BSI-Standard 200-4 findet in Unternehmen die zeitkritischen Prozesse. Ihr Maßstab ist der Fortbestand des Unternehmens, also Geld, Recht und Ruf. Für den Bevölkerungsschutz bleibt die Mechanik gleich, nur der Maßstab ändert sich:
+Die Business Impact Analyse (BIA) aus dem BSI-Standard 200-4 findet in Unternehmen die zeitkritischen Geschäftsprozesse. Ihr Maßstab ist der Fortbestand des Unternehmens, also Geld, Recht und Ruf. Für den Bevölkerungsschutz bleibt die Mechanik gleich, nur der Maßstab ändert sich:
 
 | | Klassische BIA | Diese Variante |
 |---|---|---|
@@ -17,7 +17,8 @@ Die Business Impact Analyse (BIA) aus dem BSI-Standard 200-4 findet in Unternehm
 | Schadenskategorien | Finanzen, Recht, Reputation | Leib und Leben, Umwelt, Sachwerte, öffentliche Sicherheit und Ordnung, abhängige KRITIS |
 | Ergebnis | maximal tolerierbare Ausfallzeit je Prozess | maximal tolerierbare Ausfallzeit je Dienstleistung, daraus eine Reihenfolge |
 
-Warum nicht die klassische Risikoanalyse? Für komplexe KRITIS-Ausfälle gibt es keine belastbaren Eintrittswahrscheinlichkeiten, und seltene, schwere Ereignisse würden kleingerechnet. Warum nicht FMEA? Sie braucht Kenntnisse über jede technische Komponente und vergleicht keine Branchen untereinander. Warum nicht nur GIS? Räumliche Nähe heißt noch nicht funktionale Abhängigkeit.
+Warum nicht die klassische Risikoanalyse? 
+Für komplexe KRITIS-Ausfälle gibt es keine belastbaren Eintrittswahrscheinlichkeiten, und seltene, schwere Ereignisse würden kleingerechnet. Warum nicht FMEA? Sie braucht Kenntnisse über jede technische Komponente und vergleicht keine Branchen untereinander. Warum nicht nur GIS? Räumliche Nähe heißt noch nicht funktionale Abhängigkeit.
 
 ## Was das Werkzeug abdeckt und was nicht
 
@@ -31,13 +32,13 @@ Das [KRITIS-Dachgesetz](https://www.gesetze-im-internet.de/kritisdachg/BJNR0420B
 
 Das Gesetz erfasst nur große Anlagen. Als Regelwert gilt eine Anlage als kritisch, wenn sie 500.000 Einwohner versorgt (§ 5 Abs. 2). Die genauen Kategorien und Schwellenwerte legt eine Rechtsverordnung fest (§ 4 Abs. 3, § 5 Abs. 1). Die meisten Anlagen einer Kommune liegen darunter. Kommunen und untere Katastrophenschutzbehörden kommen im Gesetz nicht vor. Risikoanalysen führen Bund und Länder (§ 11, mindestens alle vier Jahre) sowie die Betreiber durch. Dieses Werkzeug schließt die Lücke auf kommunaler Ebene. Die Ergebnisse der staatlichen Risikoanalysen, die das BBK weitergibt (§ 11 Abs. 6), lassen sich in Schritt 5 als Grundlage nutzen.
 
-Auch die Bewertung passt: Das Gesetz versteht unter Risikobewertung das Vergleichen und Priorisieren von Risiken (§ 2 Nr. 8). Genau das leistet Schritt 6. Beim Risikobegriff selbst rechnet das Gesetz mit Wahrscheinlichkeit (§ 2 Nr. 6). Darauf verzichtet dieses Verfahren bewusst.
-
-*Stand November 2026. Die Rechtsverordnung nach § 4 Abs. 3 und § 5 Abs. 1 lag bei der Recherche nur als Entwurf vor. Als geeignet festgestellte Branchenstandards waren keine zu finden. Das ist eine fachliche Einordnung, keine Rechtsberatung.*
+*Stand November 2026: Die Rechtsverordnung nach § 4 Abs. 3 und § 5 Abs. 1 lag bei der Recherche noch nicht vor.*
 
 ## Schritt für Schritt mit der Excel
 
-[`werkzeug/bia_zeitkritikalitaet.xlsx`](werkzeug/bia_zeitkritikalitaet.xlsx) ist die leere Vorlage mit vorbereiteter Liste der Sektoren und Branchen. Ein ausgefülltes Beispiel liegt unter [`beispiel/beispiel_energie_wasser.xlsx`](beispiel/beispiel_energie_wasser.xlsx). Die Excel hat ein Blatt je Schritt, die Startseite erklärt den Ablauf. Gelbe Felder sind Eingaben, graue werden berechnet. Die Datei läuft ab Excel 2010 und braucht keine Makros.
+[`werkzeug/bia_zeitkritikalitaet.xlsx`](werkzeug/bia_zeitkritikalitaet.xlsx) ist die leere Vorlage mit vorbereiteter Liste der Sektoren und Branchen. Ein ausgefülltes Beispiel liegt unter [`beispiel/beispiel_energie_wasser.xlsx`](beispiel/beispiel_energie_wasser.xlsx). Die Excel hat ein Blatt je Schritt, die Startseite erklärt den Ablauf. Hellblaue Felder sind Eingaben, weiße Felder werden berechnet.
+
+![Startseite der Excel](abbildungen/start.png)
 
 ### Schritt 1: Schutzgüter festlegen (Blatt *1 Schutzgüter*)
 
@@ -53,21 +54,22 @@ Die Namen lassen sich ändern und werden in alle Blätter übernommen.
 
 ### Schritt 2: Schadensklassen beschreiben (Blatt *2 Schadensklassen*)
 
-Jedes Schutzgut bekommt fünf Stufen von 1 (unbedeutend) bis 5 (sehr hoch), jeweils mit einer konkreten Beschreibung. So bewerten verschiedene Personen nach demselben Maßstab.
+Jedes Schutzgut bekommt fünf Stufen von 1 (unbedeutend) bis 5 (sehr hoch), jeweils mit einer konkreten Beschreibung. 
 
 ![Blatt 2: Schadensklassen](abbildungen/schadensklassen.png)
 
 ### Schritt 3: Untragbarkeitsniveau festlegen (Blatt *3 Untragbarkeit*)
 
 Ab welcher Schadensklasse ist ein Zustand für die Kommune nicht mehr hinnehmbar? Vorgeschlagen ist Klasse 3. Das Blatt zeigt sofort, was die gewählte Klasse für jedes Schutzgut bedeutet, für Leib und Leben etwa „Verletzungen mit stationärer Behandlung möglich“.
+Somit definieren wir hiermit Schutzziele je Schutzgut. 
 
 ### Schritt 4: Zeitfenster festlegen (Blatt *4 Zeitfenster*)
 
-Vorgeschlagen sind fünf Zeitfenster: unter 30 Minuten, unter 12 Stunden, unter 24 Stunden, unter 72 Stunden und unter 7 Tagen. Unter 30 Minuten heißt, schon kurze Unterbrechungen schaden erheblich. Unter 12 Stunden heißt, die Dienstleistung muss innerhalb eines Einsatz- oder Tageszyklus wieder laufen.
+Vorgeschlagen sind fünf Zeitfenster: unter 30 Minuten, unter 12 Stunden, unter 72 Stunden, unter 7 Tagen und unter 14 Tagen. Unter 30 Minuten heißt, schon kurze Unterbrechungen schaden erheblich. Unter 12 Stunden heißt, die Dienstleistung muss innerhalb eines Einsatz- oder Tageszyklus wieder laufen.
 
 ### Schritt 5: Branchen und Dienstleistungen bewerten (Blatt *5 Bewertung*)
 
-Für jede Zeile und jedes Schutzgut wird gefragt: Welche Schadensklasse ist erreicht, wenn die Dienstleistung so lange ausfällt? Das sind 5 Schutzgüter mal 5 Zeitfenster, also 25 Werte je Zeile. Die Werte steigen meist mit der Zeit. Die Felder lassen nur 1 bis 5 zu und färben sich von Grün nach Rot. Daneben gehört eine kurze Begründung.
+Für jede Zeile und jedes Schutzgut wird gefragt: Welche Schadensklasse ist erreicht, wenn die Dienstleistung so lange ausfällt? Das sind 5 Schutzgüter mal 5 Zeitfenster, also 25 Werte je Zeile. Die Werte steigen meist mit der Zeit. Die Felder lassen nur 1 bis 5 zu und färben sich von Grün nach Rot, in den Farben der DIN EN ISO 22324 für farbcodierte Alarme. Daneben gehört eine kurze Begründung.
 
 Die Liste enthält zuerst die zehn Sektoren nach § 4 Abs. 1 KRITISDachG: Energie, Transport und Verkehr, Finanzwesen, Leistungen der Sozialversicherung sowie Grundsicherung für Arbeitsuchende, Gesundheitswesen, Wasser, Ernährung, Informationstechnik und Telekommunikation, Weltraum und Siedlungsabfallentsorgung. Danach folgen zwei Sektoren, die für die Kommune wichtig sind, aber nicht im Gesetz stehen: Staat und Verwaltung (mit Feuerwehr, Rettungsdienst und Katastrophenschutz) sowie Medien und Kultur. Eine eigene Spalte zeigt, welche Sektoren im Gesetz stehen. Als Ebene sind nur Sektor, Branche und Dienstleistung wählbar.
 
@@ -77,7 +79,7 @@ Die Liste enthält zuerst die zehn Sektoren nach § 4 Abs. 1 KRITISDachG: Energi
 
 Die MTPD folgt dem Prinzip der strengsten Restriktion: Das erste Zeitfenster, in dem irgendein Schutzgut das Untragbarkeitsniveau erreicht, ist die tolerierbare Ausfallzeit der ganzen Zeile. Bleiben alle Werte darunter, steht dort „keine MTPD“. Fehlen Werte, steht dort „unvollständig“.
 
-Das Blatt *6 Ergebnis* zählt, wie viele Dienstleistungen in jedes Zeitfenster fallen, und erstellt die Rangfolge mit den zeitkritischsten oben. Die Priorität ist die Nummer des Zeitfensters: 1 = unter 30 Minuten bis 5 = unter 7 Tagen, 6 = keine MTPD. Das Bild ganz oben zeigt dieses Blatt für das Beispiel.
+Das Blatt *6 Ergebnis* zählt, wie viele Dienstleistungen in jedes Zeitfenster fallen, und erstellt die Rangfolge mit den zeitkritischsten oben. Die Priorität ist die Nummer des Zeitfensters: 1 = unter 30 Minuten bis 5 = unter 14 Tagen, 6 = keine MTPD. Das Bild ganz oben zeigt dieses Blatt für das Beispiel.
 
 ## Beispiel: Energie und Wasser
 
@@ -87,12 +89,12 @@ Die Datei [`beispiel/beispiel_energie_wasser.xlsx`](beispiel/beispiel_energie_wa
 |---|---|---|---|
 | 2 | Strom: Übertragung/Verteilung | < 12 h | BOS-Kommunikation, medizinische Heimgeräte und Intensivstationen müssen bis dahin autark versorgt sein |
 | 2 | Öffentliche Wasserversorgung | < 12 h | |
-| 3 | Strom: Erzeugung | < 24 h | kurzfristig über das Verbundnetz ausgleichbar, danach sinkt die Netzstabilität |
-| 3 | Kanalisation | < 24 h | |
-| 4 | Gas | < 72 h | der Leitungsdruck puffert, danach fällt die Wärmeversorgung aus |
-| 4 | Fernwärme | < 72 h | die Gebäude kühlen langsam aus, kritisch vor allem in Pflegeeinrichtungen |
-| 4 | Kläranlagen | < 72 h | |
-| 5 | Mineralöl | < 7 Tage | große dezentrale Vorräte |
+| 3 | Strom: Erzeugung | < 72 h | kurzfristig über das Verbundnetz ausgleichbar, danach sinkt die Netzstabilität |
+| 3 | Kanalisation | < 72 h | |
+| 4 | Gas | < 7 Tage | der Leitungsdruck puffert, danach fällt die Wärmeversorgung aus |
+| 4 | Fernwärme | < 7 Tage | die Gebäude kühlen langsam aus, kritisch vor allem in Pflegeeinrichtungen |
+| 4 | Kläranlagen | < 7 Tage | |
+| 5 | Mineralöl | < 14 Tage | große dezentrale Vorräte |
 
 ## Grenzen
 
@@ -103,6 +105,12 @@ Die Datei [`beispiel/beispiel_energie_wasser.xlsx`](beispiel/beispiel_energie_wa
 
 ## Herkunft
 
-Entstanden in der Hausarbeit „Zeitkritikalität bei der Evakuierung kritischer Anlagen“ im Modul Kritische Infrastrukturen und Bevölkerungsschutz (Prof. Dr. Alexander Fekete), Institut für Rettungsingenieurwesen und Gefahrenabwehr, TH Köln, 2026. Schutzgüter und Excel-Werkzeug sind gemeinsam mit Hendrik Platz entwickelt. Für dieses Repo wurde die Excel neu aufgebaut, mit einem Blatt je Schritt und einer automatischen Rangfolge. Mehr zur Arbeit: [Steckbrief in RIW-Projekte](https://github.com/2708Tom/RIW-Projekte/tree/main/2026-07_KRITIS_Zeitkritikalitaet-Evakuierung).
+Entstanden in der Hausarbeit „Zeitkritikalität bei der Evakuierung kritischer Anlagen“ im Modul Kritische Infrastrukturen und Bevölkerungsschutz (Prof. Dr. Alexander Fekete), Institut für Rettungsingenieurwesen und Gefahrenabwehr, TH Köln, 2026. Für dieses Repo wurde die Excel neu aufgebaut, mit einem Blatt je Schritt und einer automatischen Rangfolge. Die Hausarbeit liegt als PDF bei: [`hausarbeit/hausarbeit_zeitkritikalitaet.pdf`](hausarbeit/hausarbeit_zeitkritikalitaet.pdf).
 
-Grundlagen: BSI-Standard 200-4 Business Continuity Management (2023); BBK: Schutz Kritischer Infrastrukturen. Identifizierung in sieben Schritten (2019); Dachgesetz zur Stärkung der physischen Resilienz kritischer Anlagen (KRITISDachG) vom 11.03.2026.
+## Quellen und Links
+
+- BSI: [BSI-Standard 200-4 Business Continuity Management](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/BSI-Standards/BSI-Standard-200-4-Business-Continuity-Management/bsi-standard-200-4_Business_Continuity_Management_node.html) (2023), Grundlage der Business Impact Analyse
+- BBK: [Schutz Kritischer Infrastrukturen. Identifizierung in sieben Schritten](https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/PiB/PiB-20-schutz-infrastrukturen-identifizierung.pdf?__blob=publicationFile), Praxis im Bevölkerungsschutz Band 20, Grundlage der Schutzgüter (Kriterium Qualität)
+- [Dachgesetz zur Stärkung der physischen Resilienz kritischer Anlagen (KRITISDachG)](https://www.gesetze-im-internet.de/kritisdachg/BJNR0420B0026.html) vom 11.03.2026, Sektoren nach § 4 Abs. 1
+- [DIN EN ISO 22324:2025-08](https://www.dinmedia.de/en/standard/din-en-iso-22324/391925246) Sicherheit und Resilienz, Gefahrenabwehr, Leitfaden für farbcodierte Alarme, Farbwerte nach Anhang B
+- Hausarbeit: [Zeitkritikalität bei der Evakuierung kritischer Anlagen](hausarbeit/hausarbeit_zeitkritikalitaet.pdf) (PDF)
