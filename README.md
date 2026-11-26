@@ -4,7 +4,7 @@
 
 Wenn in einer Kommune Strom, Wasser oder Kommunikation ausfallen: Welche Dienstleistung braucht zuerst Aufmerksamkeit? Das Verfahren fragt nicht nach Eintrittswahrscheinlichkeiten, sondern danach, wie lange ein Ausfall tragbar ist, bevor der Schaden für die Bevölkerung untragbar wird. Das Ergebnis ist eine maximal tolerierbare Ausfallzeit (MTPD) je Dienstleistung und daraus eine Reihenfolge.
 
-![Priorisierung nach Zeitkritikalität](abbildungen/priorisierung.png)
+![Ergebnis: Rangfolge der Dienstleistungen](abbildungen/ergebnis.png)
 
 ## Die Idee
 
@@ -55,7 +55,7 @@ Die Namen lassen sich ändern und werden in alle Blätter übernommen.
 
 Jedes Schutzgut bekommt fünf Stufen von 1 (unbedeutend) bis 5 (sehr hoch), jeweils mit einer konkreten Beschreibung. So bewerten verschiedene Personen nach demselben Maßstab.
 
-![Schutzgüter und Schadensklassen](abbildungen/schutzgueter_schadensklassen.png)
+![Blatt 2: Schadensklassen](abbildungen/schadensklassen.png)
 
 ### Schritt 3: Untragbarkeitsniveau festlegen (Blatt *3 Untragbarkeit*)
 
@@ -71,26 +71,28 @@ Für jede Zeile und jedes Schutzgut wird gefragt: Welche Schadensklasse ist erre
 
 Die Liste enthält zuerst die zehn Sektoren nach § 4 Abs. 1 KRITISDachG: Energie, Transport und Verkehr, Finanzwesen, Leistungen der Sozialversicherung sowie Grundsicherung für Arbeitsuchende, Gesundheitswesen, Wasser, Ernährung, Informationstechnik und Telekommunikation, Weltraum und Siedlungsabfallentsorgung. Danach folgen zwei Sektoren, die für die Kommune wichtig sind, aber nicht im Gesetz stehen: Staat und Verwaltung (mit Feuerwehr, Rettungsdienst und Katastrophenschutz) sowie Medien und Kultur. Eine eigene Spalte zeigt, welche Sektoren im Gesetz stehen. Als Ebene sind nur Sektor, Branche und Dienstleistung wählbar.
 
+![Blatt 5: Bewertung von Energie und Wasser](abbildungen/bewertung.png)
+
 ### Schritt 6: Ergebnis ablesen (Spalte MTPD und Blatt *6 Ergebnis*)
 
 Die MTPD folgt dem Prinzip der strengsten Restriktion: Das erste Zeitfenster, in dem irgendein Schutzgut das Untragbarkeitsniveau erreicht, ist die tolerierbare Ausfallzeit der ganzen Zeile. Bleiben alle Werte darunter, steht dort „keine MTPD“. Fehlen Werte, steht dort „unvollständig“.
 
-Das Blatt *6 Ergebnis* zählt, wie viele Dienstleistungen in jedes Zeitfenster fallen, und erstellt die Rangfolge mit den zeitkritischsten oben.
+Das Blatt *6 Ergebnis* zählt, wie viele Dienstleistungen in jedes Zeitfenster fallen, und erstellt die Rangfolge mit den zeitkritischsten oben. Die Priorität ist die Nummer des Zeitfensters: 1 = unter 30 Minuten bis 5 = unter 7 Tagen, 6 = keine MTPD. Das Bild ganz oben zeigt dieses Blatt für das Beispiel.
 
 ## Beispiel: Energie und Wasser
 
 Die Datei [`beispiel/beispiel_energie_wasser.xlsx`](beispiel/beispiel_energie_wasser.xlsx) enthält diese Bewertungen:
 
-| Rang | Branche bzw. Dienstleistung | MTPD | Begründung (gekürzt) |
+| Priorität | Branche bzw. Dienstleistung | MTPD | Begründung (gekürzt) |
 |---|---|---|---|
-| 1 | Strom: Übertragung/Verteilung | < 12 h | BOS-Kommunikation, medizinische Heimgeräte und Intensivstationen müssen bis dahin autark versorgt sein |
-| 1 | Öffentliche Wasserversorgung | < 12 h | |
-| 2 | Strom: Erzeugung | < 24 h | kurzfristig über das Verbundnetz ausgleichbar, danach sinkt die Netzstabilität |
-| 2 | Kanalisation | < 24 h | |
-| 3 | Gas | < 72 h | der Leitungsdruck puffert, danach fällt die Wärmeversorgung aus |
-| 3 | Fernwärme | < 72 h | die Gebäude kühlen langsam aus, kritisch vor allem in Pflegeeinrichtungen |
-| 3 | Kläranlagen | < 72 h | |
-| 4 | Mineralöl | < 7 Tage | große dezentrale Vorräte |
+| 2 | Strom: Übertragung/Verteilung | < 12 h | BOS-Kommunikation, medizinische Heimgeräte und Intensivstationen müssen bis dahin autark versorgt sein |
+| 2 | Öffentliche Wasserversorgung | < 12 h | |
+| 3 | Strom: Erzeugung | < 24 h | kurzfristig über das Verbundnetz ausgleichbar, danach sinkt die Netzstabilität |
+| 3 | Kanalisation | < 24 h | |
+| 4 | Gas | < 72 h | der Leitungsdruck puffert, danach fällt die Wärmeversorgung aus |
+| 4 | Fernwärme | < 72 h | die Gebäude kühlen langsam aus, kritisch vor allem in Pflegeeinrichtungen |
+| 4 | Kläranlagen | < 72 h | |
+| 5 | Mineralöl | < 7 Tage | große dezentrale Vorräte |
 
 ## Grenzen
 
