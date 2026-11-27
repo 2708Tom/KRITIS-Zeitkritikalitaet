@@ -1,6 +1,6 @@
 # Zeitkritikalität kommunaler KRITIS
 
-**Eine Business Impact Analyse nach BSI-Standard 200-4, angepasst für den Bevölkerungsschutz.**
+**Eine Ausfallfolgenanalyse für kritische Dienstleistungen im Bevölkerungsschutz.**
 
 Wenn in einer Kommune Strom, Wasser oder Kommunikation ausfallen: Welche Dienstleistung braucht zuerst Aufmerksamkeit? Das Verfahren fragt nicht nach Eintrittswahrscheinlichkeiten, sondern danach, wie lange ein Ausfall tragbar ist, bevor der Schaden für die Bevölkerung untragbar wird. Das Ergebnis ist eine maximal tolerierbare Ausfallzeit (MTPD) je Dienstleistung und daraus eine Reihenfolge.
 
@@ -8,14 +8,14 @@ Wenn in einer Kommune Strom, Wasser oder Kommunikation ausfallen: Welche Dienstl
 
 ## Die Idee
 
-Die Business Impact Analyse (BIA) aus dem BSI-Standard 200-4 findet in Unternehmen die zeitkritischen Geschäftsprozesse. Ihr Maßstab ist der Fortbestand des Unternehmens, also Geld, Recht und Ruf. Für den Bevölkerungsschutz bleibt die Mechanik gleich, nur der Maßstab ändert sich:
+Bewertet werden die Sektoren, Branchen und Dienstleistungen, von denen die Versorgung einer Kommune abhängt. Für jede Dienstleistung wird gefragt, welcher Schaden für die Bevölkerung nach einer bestimmten Ausfalldauer entsteht:
 
-| | Klassische BIA | Diese Variante |
-|---|---|---|
-| Betrachtet | Geschäftsprozesse eines Unternehmens | Sektoren, Branchen und Dienstleistungen einer Kommune |
-| Schutzgut | Fortbestand des Unternehmens | Versorgung und Sicherheit der Bevölkerung |
-| Schadenskategorien | Finanzen, Recht, Reputation | Leib und Leben, Umwelt, Sachwerte, öffentliche Sicherheit und Ordnung, abhängige KRITIS |
-| Ergebnis | maximal tolerierbare Ausfallzeit je Prozess | maximal tolerierbare Ausfallzeit je Dienstleistung, daraus eine Reihenfolge |
+| | |
+|---|---|
+| Betrachtet | Sektoren, Branchen und Dienstleistungen einer Kommune |
+| Maßstab | Versorgung und Sicherheit der Bevölkerung |
+| Schutzgüter | Leib und Leben, Umwelt, Sachwerte, öffentliche Sicherheit und Ordnung, abhängige KRITIS |
+| Ergebnis | maximal tolerierbare Ausfallzeit je Dienstleistung, daraus eine Reihenfolge |
 
 Warum nicht die klassische Risikoanalyse? 
 Für komplexe KRITIS-Ausfälle gibt es keine belastbaren Eintrittswahrscheinlichkeiten, und seltene, schwere Ereignisse würden kleingerechnet. Warum nicht FMEA? Sie braucht Kenntnisse über jede technische Komponente und vergleicht keine Branchen untereinander. Warum nicht nur GIS? Räumliche Nähe heißt noch nicht funktionale Abhängigkeit.
@@ -36,7 +36,7 @@ Das Gesetz erfasst nur große Anlagen. Als Regelwert gilt eine Anlage als kritis
 
 ## Schritt für Schritt mit der Excel
 
-[`werkzeug/bia_zeitkritikalitaet.xlsx`](werkzeug/bia_zeitkritikalitaet.xlsx) ist die leere Vorlage mit vorbereiteter Liste der Sektoren und Branchen. Ein ausgefülltes Beispiel liegt unter [`beispiel/beispiel_energie_wasser.xlsx`](beispiel/beispiel_energie_wasser.xlsx). Die Excel hat ein Blatt je Schritt, die Startseite erklärt den Ablauf. Hellblaue Felder sind Eingaben, weiße Felder werden berechnet.
+[`werkzeug/zeitkritikalitaet.xlsx`](werkzeug/zeitkritikalitaet.xlsx) ist die leere Vorlage mit vorbereiteter Liste der Sektoren und Branchen. Ein ausgefülltes Beispiel liegt unter [`beispiel/beispiel_energie_wasser.xlsx`](beispiel/beispiel_energie_wasser.xlsx). Die Excel hat ein Blatt je Schritt, die Startseite erklärt den Ablauf. Hellblaue Felder sind Eingaben, weiße Felder werden berechnet.
 
 ![Startseite der Excel](abbildungen/start.png)
 
@@ -109,7 +109,7 @@ Entstanden in der Hausarbeit „Zeitkritikalität bei der Evakuierung kritischer
 
 ## Quellen und Links
 
-- BSI: [BSI-Standard 200-4 Business Continuity Management](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/BSI-Standards/BSI-Standard-200-4-Business-Continuity-Management/bsi-standard-200-4_Business_Continuity_Management_node.html) (2023), Grundlage der Business Impact Analyse
+- BSI: [BSI-Standard 200-4 Business Continuity Management](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/BSI-Standards/BSI-Standard-200-4-Business-Continuity-Management/bsi-standard-200-4_Business_Continuity_Management_node.html) (2023), Begriff der maximal tolerierbaren Ausfallzeit
 - BBK: [Schutz Kritischer Infrastrukturen. Identifizierung in sieben Schritten](https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/PiB/PiB-20-schutz-infrastrukturen-identifizierung.pdf?__blob=publicationFile), Praxis im Bevölkerungsschutz Band 20, Grundlage der Schutzgüter (Kriterium Qualität)
 - [Dachgesetz zur Stärkung der physischen Resilienz kritischer Anlagen (KRITISDachG)](https://www.gesetze-im-internet.de/kritisdachg/BJNR0420B0026.html) vom 11.03.2026, Sektoren nach § 4 Abs. 1
 - [DIN EN ISO 22324:2025-08](https://www.dinmedia.de/en/standard/din-en-iso-22324/391925246) Sicherheit und Resilienz, Gefahrenabwehr, Leitfaden für farbcodierte Alarme, Farbwerte nach Anhang B
