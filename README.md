@@ -1,4 +1,4 @@
-# Zeitkritikalität kommunaler KRITIS
+<img src=".github/bilder/link-vorschau.png" alt="Zeitkritikalität kommunaler KRITIS" width="100%">
 
 **Eine Ausfallfolgenanalyse für kritische Dienstleistungen im Bevölkerungsschutz.**
 
